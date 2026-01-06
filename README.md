@@ -58,11 +58,10 @@ This builds and serves the production version in one command.
 ### Netlify Deployment
 1. Connect your GitHub repository to Netlify
 2. The `netlify.toml` file configures the build automatically:
-   - **Build Command**: `ng build --prod`
+   - **Build Command**: `npm run build:prod`
    - **Publish Directory**: `dist/cricket-fee-distributor-v2`
    - **Node Version**: 18
-3. The Angular Runtime plugin handles the Angular CLI installation
-4. Or manually set the build settings in Netlify dashboard
+3. No plugin needed - uses standard npm scripts
 
 ### Docker Deployment
 Build and run with Docker:

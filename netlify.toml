@@ -1,9 +1,6 @@
 [build]
-  command = "chmod +x node_modules/.bin/ng && ng build --prod"
+  command = "npm run build:prod"
   publish = "dist/cricket-fee-distributor-v2"
-
-[[plugins]]
-  package = "@netlify/angular-runtime"
 
 [build.environment]
   NODE_VERSION = "18"
