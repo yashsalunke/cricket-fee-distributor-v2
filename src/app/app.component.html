@@ -1,0 +1,28 @@
+<div class='step' *ngIf='step===1'>
+<h3>Paste Your Team's Stats</h3>
+<label>Batting Stats</label>
+<textarea rows='8' [(ngModel)]='battingText'></textarea>
+<label>Bowling Stats</label>
+<textarea rows='8' [(ngModel)]='bowlingText'></textarea>
+<label>Total Amount</label>
+<input type='number' [(ngModel)]='amount'>
+<button (click)='calculate()'>Calculate</button>
+</div>
+
+<div class='step' *ngIf='step===2'>
+<h3>Final Contribution</h3>
+<table>
+<tr><th>Player</th><th>Balls Bat</th><th>Runs</th><th>SR</th><th>Balls Bowl</th><th>Wickets</th><th>Eco</th><th>%</th><th>Amount</th></tr>
+<tr *ngFor='let p of players'>
+<td>{{p.name}}</td>
+<td>{{p.ballsFaced}}</td>
+<td>{{p.runs}}</td>
+<td>{{p.strikeRate}}</td>
+<td>{{p.ballsBowled}}</td>
+<td>{{p.wickets}}</td>
+<td>{{p.economy}}</td>
+<td>{{p.finalPercent|number:'1.1-1'}}%</td>
+<td>₹{{p.amount|number:'1.0-0'}}</td>
+</tr>
+</table>
+</div>
