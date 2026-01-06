@@ -55,14 +55,14 @@ This builds and serves the production version in one command.
 
 ## Deployment Options
 
-### Static Hosting
-The built files in `dist/cricket-fee-distributor-v2/` can be deployed to any static hosting service:
-
-- **Netlify**: Drag and drop the `dist` folder
-- **Vercel**: Connect GitHub repo and deploy
-- **GitHub Pages**: Use `angular-cli-ghpages`
-- **AWS S3 + CloudFront**
-- **Firebase Hosting**
+### Netlify Deployment
+1. Connect your GitHub repository to Netlify
+2. The `netlify.toml` file configures the build automatically
+3. Or manually set:
+   - **Build Command**: `npm run build`
+   - **Publish Directory**: `dist/cricket-fee-distributor-v2`
+   - **Node Version**: 18
+4. Enable the Angular Runtime plugin in Netlify dashboard
 
 ### Docker Deployment
 Build and run with Docker:

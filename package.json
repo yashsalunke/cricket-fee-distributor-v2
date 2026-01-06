@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "build:prod": "ng build --configuration production",
-    "serve:prod": "http-server dist/cricket-fee-distributor-v2 -p 8080",
+    "start": "npx ng serve",
+    "build": "npx ng build",
+    "build:prod": "npx ng build --configuration production",
+    "serve:prod": "npx http-server dist/cricket-fee-distributor-v2 -p 8080",
     "prod": "npm run build:prod && npm run serve:prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
