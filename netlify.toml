@@ -1,5 +1,5 @@
 [build]
-  command = "ng build --prod"
+  command = "chmod +x node_modules/.bin/ng && ng build --prod"
   publish = "dist/cricket-fee-distributor-v2"
 
 [[plugins]]
