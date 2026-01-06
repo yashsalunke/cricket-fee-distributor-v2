@@ -1,0 +1,90 @@
+<div class="details-container">
+  <header>
+    <h1>📊 Calculation Details</h1>
+    <p>Understanding how fees are distributed</p>
+  </header>
+
+  <div class="explanation-section">
+    <h2>🔢 Opportunity Score Calculation</h2>
+    <p>The foundation of fair distribution is the <strong>Opportunity Score</strong>, which measures each player's contribution relative to team performance.</p>
+
+    <div class="formula">
+      <h3>Batting Opportunity</h3>
+      <p><code>bat = (ballsFaced × battingPositionWeight) / totalTeamBattingContribution</code></p>
+      <ul>
+        <li><strong>Batting Position Weights:</strong></li>
+        <li>Positions 1-2: 1.0x (openers get full weight)</li>
+        <li>Positions 3-4: 0.9x</li>
+        <li>Positions 5-6: 0.8x</li>
+        <li>Positions 7-8: 0.65x</li>
+        <li>Positions 9+: 0.5x (tailenders get reduced weight)</li>
+      </ul>
+    </div>
+
+    <div class="formula">
+      <h3>Bowling Opportunity</h3>
+      <p><code>bowl = ballsBowled / totalTeamBallsBowled</code></p>
+      <p>Simple proportional contribution based on overs bowled.</p>
+    </div>
+
+    <div class="formula">
+      <h3>Total Opportunity Score</h3>
+      <p><code>opportunityScore = (bat × 0.5) + (bowl × 0.5)</code></p>
+      <p>Equal weighting of batting and bowling contributions.</p>
+    </div>
+  </div>
+
+  <div class="explanation-section">
+    <h2>🎯 Performance Bonuses</h2>
+    <p>Individual excellence is rewarded with bonus percentage points:</p>
+
+    <div class="bonus-table">
+      <div class="bonus-item">
+        <strong>Strike Rate >180:</strong> +2%
+      </div>
+      <div class="bonus-item">
+        <strong>Strike Rate >150:</strong> +1%
+      </div>
+      <div class="bonus-item">
+        <strong>Runs ≥30:</strong> +1%
+      </div>
+      <div class="bonus-item">
+        <strong>Economy <6:</strong> +1%
+      </div>
+      <div class="bonus-item">
+        <strong>Wickets ≥2:</strong> +1%
+      </div>
+      <div class="bonus-item">
+        <strong>Wickets ≥3:</strong> +2%
+      </div>
+    </div>
+
+    <p><em>Note: These bonuses are SUBTRACTED from the base percentage, meaning better players get LESS share (inverse relationship).</em></p>
+  </div>
+
+  <div class="explanation-section">
+    <h2>⚖️ Final Distribution</h2>
+    <ol>
+      <li><strong>Calculate Base %:</strong> <code>(opportunityScore / totalOpportunity) × 100</code></li>
+      <li><strong>Apply Bonuses:</strong> Subtract performance bonuses</li>
+      <li><strong>Clamp Range:</strong> Ensure each player gets 3-15%</li>
+      <li><strong>Normalize:</strong> Adjust to ensure total = 100%</li>
+      <li><strong>Calculate Amount:</strong> <code>final% × totalAmount</code></li>
+    </ol>
+  </div>
+
+  <div class="explanation-section">
+    <h2>🎯 Why This Approach?</h2>
+    <ul>
+      <li><strong>Fair Opportunity:</strong> Rewards players who contribute more to team success</li>
+      <li><strong>Individual Excellence:</strong> Penalizes exceptional performers to redistribute to the team</li>
+      <li><strong>Balanced Range:</strong> Prevents any player from dominating the distribution</li>
+      <li><strong>Team Focus:</strong> Encourages collective performance over individual heroics</li>
+    </ul>
+  </div>
+
+  <div class="actions">
+    <button class="btn primary" routerLink="/">🏠 Back to Calculator</button>
+    <button class="btn secondary" routerLink="/tutorial">📚 View Tutorial</button>
+  </div>
+</div>

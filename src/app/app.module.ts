@@ -4,7 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule } from '@angular/forms';
 
+import { RouterModule } from '@angular/router';
+
 import { AppComponent } from './app.component';
+
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -12,7 +16,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

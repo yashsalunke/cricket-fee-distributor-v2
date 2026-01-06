@@ -1,0 +1,30 @@
+<div class="tutorial-container">
+  <header>
+    <h1>📚 Tutorial - Sample Inputs</h1>
+    <p>Copy these sample scorecards to test the fee distributor</p>
+  </header>
+
+  <div class="sample-section">
+    <h2>Sample Batting Stats</h2>
+    <p>Paste this into the "Batting Stats" textarea:</p>
+    <textarea readonly rows="12" class="sample-textarea">{{ sampleBatting }}</textarea>
+    <button class="copy-btn" (click)="copyBatting()">📋 Copy to Clipboard</button>
+  </div>
+
+  <div class="sample-section">
+    <h2>Sample Bowling Stats</h2>
+    <p>Paste this into the "Bowling Stats" textarea:</p>
+    <textarea readonly rows="8" class="sample-textarea">{{ sampleBowling }}</textarea>
+    <button class="copy-btn" (click)="copyBowling()">📋 Copy to Clipboard</button>
+  </div>
+
+  <div class="sample-section">
+    <h3>Total Amount: ₹3300</h3>
+    <p>This will distribute ₹3300 among the players based on their performance.</p>
+  </div>
+
+  <div class="actions">
+    <button class="btn primary" routerLink="/">🏠 Back to Calculator</button>
+    <button class="btn secondary" routerLink="/details">📊 View Calculation Details</button>
+  </div>
+</div>
