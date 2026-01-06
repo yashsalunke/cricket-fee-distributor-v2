@@ -2,7 +2,6 @@
   "name": "cricket-fee-distributor-v2",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "npx ng serve",
     "build": "npx ng build",
     "build:prod": "npx ng build --configuration production",
