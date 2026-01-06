@@ -1,28 +1,59 @@
-<div class='step' *ngIf='step===1'>
-<h3>Paste Your Team's Stats</h3>
-<label>Batting Stats</label>
-<textarea rows='8' [(ngModel)]='battingText'></textarea>
-<label>Bowling Stats</label>
-<textarea rows='8' [(ngModel)]='bowlingText'></textarea>
-<label>Total Amount</label>
-<input type='number' [(ngModel)]='amount'>
-<button (click)='calculate()'>Calculate</button>
-</div>
+<div class="container">
+  <header>
+    <h1>Cricket Fee Distributor</h1>
+    <p>Calculate fair fee distribution based on player performance</p>
+  </header>
 
-<div class='step' *ngIf='step===2'>
-<h3>Final Contribution</h3>
-<table>
-<tr><th>Player</th><th>Balls Bat</th><th>Runs</th><th>SR</th><th>Balls Bowl</th><th>Wickets</th><th>Eco</th><th>%</th><th>Amount</th></tr>
-<tr *ngFor='let p of players'>
-<td>{{p.name}}</td>
-<td>{{p.ballsFaced}}</td>
-<td>{{p.runs}}</td>
-<td>{{p.strikeRate}}</td>
-<td>{{p.ballsBowled}}</td>
-<td>{{p.wickets}}</td>
-<td>{{p.economy}}</td>
-<td>{{p.finalPercent|number:'1.1-1'}}%</td>
-<td>₹{{p.amount|number:'1.0-0'}}</td>
-</tr>
-</table>
+  <div class="form-section">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="batting">Batting Stats</label>
+        <textarea id="batting" [(ngModel)]="battingText" placeholder="Paste batting scorecard here..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="bowling">Bowling Stats</label>
+        <textarea id="bowling" [(ngModel)]="bowlingText" placeholder="Paste bowling scorecard here..."></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group full-width">
+        <label for="amount">Total Amount (₹)</label>
+        <input id="amount" type="number" [(ngModel)]="amount" placeholder="Enter total amount">
+        <br><br>
+        <button class="btn" (click)="calculate()">Calculate Distribution</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-section" *ngIf="step === 2">
+    <h3>Fee Distribution Results</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Balls Bat</th>
+          <th>Runs</th>
+          <th>SR</th>
+          <th>Balls Bowl</th>
+          <th>Wickets</th>
+          <th>Eco</th>
+          <th>%</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of players">
+          <td>{{p.name}}</td>
+          <td>{{p.ballsFaced}}</td>
+          <td>{{p.runs}}</td>
+          <td>{{p.strikeRate}}</td>
+          <td>{{p.ballsBowled}}</td>
+          <td>{{p.wickets}}</td>
+          <td>{{p.economy}}</td>
+          <td>{{p.finalPercent | number:'1.1-1'}}%</td>
+          <td>₹{{p.amount | number:'1.0-0'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
